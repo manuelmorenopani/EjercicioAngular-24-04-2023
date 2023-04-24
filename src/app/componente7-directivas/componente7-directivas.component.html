@@ -1,0 +1,27 @@
+<h1>Ejercicio 7</h1>
+<tr *ngFor="let numeros of lista ">
+    <td>{{numeros}}</td>
+</tr>
+<br>
+<h2>Escribe un numero 1 o 2</h2>
+<input [(ngModel)]="listanumeros">
+<div [ngSwitch]="listanumeros">
+    <p *ngSwitchCase="1">
+        Ruben
+    </p>
+    <p *ngSwitchCase="2">
+        Manuel
+    </p>
+    <p *ngSwitchDefault="" >
+        No tiene nombre
+    </p>
+</div>
+<h2>Inteneta acertar</h2>
+<input [(ngModel)]="acierta">
+<h1 *ngIf="acierta==1; else templateempty">Has acertado</h1>
+
+<ng-template #templateempty>
+    No es el numero
+</ng-template>
+
+
